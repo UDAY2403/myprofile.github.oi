@@ -1,896 +1,300 @@
-/* Created by uday Kumar  */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive  shopping products website design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css ">
+    <!-- custom css file -->
+   <link rel="stylesheet" href="styleW.css">
+</head>
+<body background ="ladies1.jpg">
+    <header class="header">
+        <a href="#" class="logo">
+        <img src="udaylogo.png"  alt="">
+    </a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#products">Products</a>
+        <a href="#review">Review</a>
+        <a href="#contact">Contact</a>
+        <a href="#blogs">Blogs</a>
+    </nav>
+        <form action="" method="">
+            <div class="inputBox">
+              <!-- <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+           -->
+              <button type="submit">Login</button>
+            </div>
+            </form>
+   
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search heare.."> 
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    <div class="cart-items-container">
+        <div class="cart-item">
+            <span class="fas fa-item"></span>
+            <img src="aix1.jpg" alt="">
+            <div class="content">
+                <h3>cart item 1</h3>
+                <div class="price">$215.99/-</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-item"></span>
+            <img src="\img\milk1.jpg" alt="">
+            <div class="content">
+                <h3>cart item 2</h3>
+                <div class="price">$120.99/-</div>
+            </div>
+        </div>
 
-}
+   <a href="#" class="btn">checkout now</a>
+</div>
+</header>
+<!-- haeder section ends -->
 
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-.fa{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:fixed;
-    bottom:700px;
-    right:40px;
-    height:50px;
-    width:50px;
-    background:rgb(226, 69, 69);
-    border-radius:50%;
-    color:#fff;
-    box-shadow:0px 0px 10px rgba(0,0,0,.5);
-    background-position:center;
-    background-repeat:no-repeat;
-    visibility:hidden;
-    opacity:0;
-    /*cursor:pointer;*/
-    transition:.3s;
-    z-index:10000;
+<!-- home section starts -->
+<section class="home" id="home">
+    <div class="content">
+<h3>UDAY PRODUCTS!</h3>
+<p>Indian e-commerce company, headquartered in Bangalore, and incorporated in Singapore as a private limited company. The company initially focused on online book sales before expanding into other product categories such as consumer electronics, fashion, home essentials, groceries, and lifestyle products.[5][6]
 
+    The service competes primarily with Amazon India and domestic rival Snapdeal.[7][8] As of FY23, UDAY PRODUCTS held a 48% market share in the Indian e-commerce industry.[9] UDAY PRODUCTS has a dominant position in the apparel segment, bolstered by its acquisition of Myntra, and was described as being "neck and neck" with Amazon in the sale of electronics and mobile phones.[10]</p>
+<a href="#" class="btn">get yours now</a>
+    </div>
+</section>
+<!-- about section -->
+<section class="about" id="about">
+    <h1 class="heading"><span>about  us</span></h1>
+    <div class="row">
+        <div class="image">
+        <img src="women clothes.jpg" alt="">
+    </div>
+        <div class="content">
+                <h3>what makes our PRODUCTS special?</h3>
+                <p>The first step to making your product unique is to know your audience well. You need to understand their needs, pain points, preferences, and behaviors. You need to segment your market and identify your ideal customer profile. You need to conduct market research, customer interviews, surveys, and feedback sessions..</p>
+                <a href="#" class="btn">learn more</a>
+        </div>
+    </div>
+    </section>
     
-}
-.fa.active{
-    visibility:visible;
-    opacity:1;
-    bottom:40px;
-}
-
-.sec1 {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    border-bottom: .1rem solid #ccc;
-
-}
-
-.menuBar {
-    position: fixed;
-    top: 0;
-    left: 120%;
-    height: 100%;
-    width: 80%;
-    /* background: red; */
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 5rem rgba(0, 0, 0, .5);
-    transition: .5s;
-}
-
-.menuBar.active {
-    left: 20%;
-}
-
-.menuBar ul {
-    list-style-type: none;
-}
-
-.menuBar ul li {
-    margin: 5rem 0;
-}
-
-.menuBar ul li a {
-    position: relative;
-    text-decoration: none;
-    color: #fff;
-    font-size: 2rem;
-    padding: 1.5rem;
-    transition: .5s;
-    background: #e66060;
-    padding: 1rem 3rem;
-    border-radius: 3rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
-
-}
-
-
-.menuBar ul li a:hover {
-    color: #e66060;
-    background: #fff;
-}
-
-.navBar {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 0 .5rem rgba(0, 0, 0, .2);
-    z-index: 2000;
-}
-
-.sec1__menuIcon {
-    display: none;
-    position: relative;
-    height: 3rem;
-    width: 3rem;
-    background: url('https://i.ibb.co/ccyJDPg/icons8-menu-24.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.sec1__menuIcon.active {
-    background: url('https://i.ibb.co/G9TDqVj/icons8-macos-close-32.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-.navBar .logo h1 {
-    color: #333;
-    font-size: 2rem;
-    letter-spacing: .2rem;
-}
-
-.navBar .navBar__menu ul {
-    display: flex;
-    list-style-type: none;
-}
-
-.navBar .navBar__menu ul li {
-    margin: 1.5rem;
-}
-
-.navBar .navBar__menu ul li a {
-    position: relative;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding-bottom: 1rem;
-    color: #333;
-    transition: .3s;
-}
-
-.navBar .navBar__menu ul li a:before {
-    background: rgb(236, 78, 78);
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    height: .4rem;
-    width: 0%;
-    border-radius: 1rem;
-    transition: .4s;
-}
-
-.navBar .navBar__menu ul li a:hover:before {
-    width: 100%;
-}
-
-.navBar .navBar__menu ul li a:hover {
-    color: rgb(226, 86, 86);
-}
-
-.sec1__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 10rem;
-    /* background: blue; */
-    width: 100%;
-    padding: 0 5rem;
-}
-
-.sec1_content .sec1_contentDetail h1 {
-    font-weight: 900;
-    font-size: 5rem;
-    text-transform: capitalize;
-    transform: translateY(7rem);
-}
-
-.sec1__contentHider {
-    overflow: hidden;
-}
-
-.sec1_content .sec1_contentDetail h1 span {
-    color: rgb(236, 75, 75);
-}
-
-.sec1_content .sec1_contentDetail {
-    margin-bottom: 3rem;
-}
-
-.sec1__content a {
-    background: rgb(226, 69, 69);
-    color: #fff;
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    transition: .4s;
-}
-
-.sec1__content a:hover {
-    background: rgb(216, 43, 43);
-}
-
-.sec1__imgContainer {
-    position: relative;
-}
-
-.sec1__imgBx {
-    position: relative;
-    width: 50rem;
-    /* background: red; */
-}
-
-.sec1__design3 {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    background: linear-gradient(rgb(255, 107, 107), rgb(184, 27, 27));
-}
-
-.sec1__design4 {
-    content: "";
-    position: absolute;
-    top: 40%;
-    left: -10%;
-    height: 40%;
-    width: 40%;
-    border-radius: 30% 50%;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
-    background: linear-gradient(rgb(245, 93, 93), rgb(255, 122, 122));
-    animation: animate3 ease-in-out 3s infinite;
-}
-
-@keyframes animate3 {
-    0% {
-        transform: translateY(-3rem);
-    }
-
-    50% {
-        transform: translateY(0rem);
-    }
-
-    100% {
-        transform: translateY(-3rem);
-    }
-}
-
-.sec1__imgBx img {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    object-fit: cover;
-    filter: drop-shadow(0 0 .5rem rgba(0, 0, 0, .5));
-}
-
-.sec1_imgBx .sec1_design1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 10rem;
-    width: 10rem;
-    background: linear-gradient(rgb(255, 107, 107), rgb(184, 27, 27));
-    border-radius: 5rem 10rem 10rem 4rem;
-    filter: blur(6px);
-    animation: animate 3s ease-in-out infinite;
-    z-index: 1000;
-}
-
-@keyframes animate {
-    0% {
-        transform: translateX(0rem);
-    }
-
-    50% {
-        transform: translateX(2rem);
-    }
-
-    100% {
-        transform: translateX(0rem);
-    }
-}
-
-.sec1_imgBx .sec1_design2 {
-    position: absolute;
-    bottom: 2rem;
-    right: 0;
-    height: 10rem;
-    width: 10rem;
-    background: linear-gradient(rgb(255, 107, 107), rgb(184, 27, 27));
-    border-radius: 2rem;
-    filter: blur(2px);
-    animation: animate2 ease-in-out 5s infinite;
-    z-index: 1000;
-}
-
-@keyframes animate2 {
-    0% {
-        transform: translateY(0rem) rotateZ(0deg);
-    }
-
-    50% {
-        transform: translateY(-2rem) rotateZ(360deg);
-    }
-
-    100% {
-        transform: translateY(0rem) rotateZ(0deg);
-    }
-}
-
-.sec2 {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    border-bottom: .2rem solid rgb(218, 218, 218);
-}
-
-.sec2__heading {
-    overflow: hidden;
-}
-
-.sec2__heading h2 {
-    position: relative;
-    font-size: 5rem;
-    color: #333;
-    text-transform: capitalize;
-}
-
-.sec2__heading h2:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: .2rem;
-    width: 100%;
-    background-color: rgb(241, 102, 102);
-}
-
-.sec2__container {
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
-
-    padding: 0 5rem;
-}
-
-.sec2__aboutme1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex: .5;
-}
-
-.sec2__aboutme1Img {
-    position: relative;
-    width: 10rem;
-    overflow: hidden;
-    border: .3rem solid rgb(156, 60, 60);
-    padding: .3rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
-}
-
-.sec2__aboutme1Img:hover {
-    transform: scale(1.1);
-}
-
-.sec2__aboutme1Img img {
-    width: 100%;
-    object-fit: cover;
-    background: linear-gradient(rgb(255, 121, 121), rgb(146, 33, 33));
-    border-radius: 50%;
-}
-
-.sec2__aboutme1 h2 {
-    position: relative;
-    font-size: 2rem;
-    color: #333;
-    padding-bottom: 1rem;
-
-}
-
-.sec2__aboutme1 h2:before {
-    position: absolute;
-    height: .2rem;
-    width: 60%;
-    bottom: 0;
-    right: 25%;
-    content: "";
-    background: #ccc;
-}
-
-.sec2__aboutme1Social ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
-    list-style-type: none;
-}
-
-.sec2__aboutme1Social ul li {
-    margin: 0 2rem;
-    transition: .3s;
-
-}
-
-.sec2__aboutme1Social ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 3rem;
-    transition: .3s;
-}
-
-.sec2__aboutme1Social ul li:hover {
-    transform: translateY(-.3rem);
-}
-
-.sec2__aboutme1Social ul li:nth-child(1) a:hover {
-    color: rgb(235, 108, 108);
-}
-
-.sec2__aboutme1Social ul li:nth-child(2) a:hover {
-    color: rgb(0, 0, 0);
-}
-
-.sec2__aboutme1Social ul li:nth-child(3) a:hover {
-    color: rgb(85, 109, 219);
-
-}
-
-.sec2__aboutme2 {
-    position: relative;
-    flex: .5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sec2__aboutme2 p {
-    font-size: 1.5rem;
-}
-
-.sec3 {
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-    width: 100%;
-    background: radial-gradient(#333, #000);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.sec3 h1 {
-    position: relative;
-    color: #fff;
-    font-size: 5rem;
-    border-bottom: .2rem solid rgb(235, 102, 102);
-}
-
-.sec3__container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.sec3_box .sec3_percent svg {
-    position: relative;
-    width: 15rem;
-    height: 15rem;
-    z-index: 1000;
-}
-
-.sec3_box .sec3_percent svg circle {
-    width: 100%;
-    height: 100%;
-    fill: none;
-    stroke: #191919;
-    stroke-width: 10;
-    stroke-linecap: round;
-    transform: translate(.5rem, .5rem);
-}
-
-.sec3__percent svg circle:nth-child(2) {
-    stroke-dasharray: 440;
-    stroke-dashoffset: 440;
-}
-
-.sec3_card:nth-child(1) .sec3box .sec3_percent svg circle:nth-child(2) {
-    stroke: #00ff43;
-    stroke-dashoffset: calc(440 - (440*90)/100);
-}
-
-.sec3_card:nth-child(2) .sec3box .sec3_percent svg circle:nth-child(2) {
-    stroke: #e66060;
-    stroke-dashoffset: calc(440 - (440*70)/100);
-}
-
-.sec3_card:nth-child(3) .sec3box .sec3_percent svg circle:nth-child(2) {
-    stroke: #6074e6;
-    stroke-dashoffset: calc(440 - (440*55)/100);
-}
-
-.sec3__card {
-    position: relative;
-    background: #000;
-    padding: 5rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
-    box-shadow: 0 0 3rem rgba(0, 0, 0, .9);
-    margin: 2rem;
-}
-
-.sec3_card .sec3_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.sec3__card:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    top: 0;
-    left: 0;
-    background: rgba(225, 225, 225, .05);
-    z-index: 1;
-    transition: .3s;
-}
-
-.sec3__card:hover:before {
-    transform: translateX(50%);
-    width: 90%;
-}
-
-.sec3__percent {
-    position: relative;
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-    z-index: 1;
-    box-shadow: 0 0 2rem #000;
-}
-
-.sec3__percent .number {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    z-index: 1000;
-}
-
-.number h2 {
-    color: rgba(255, 255, 255, .5);
-    font-size: 4rem;
-    font-weight: 900;
-    transition: .3s;
-}
-
-.number h2 span {
-    font-size: 2rem;
-    transition: .3s;
-}
-
-.sec3__card:hover .number h2 span {
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-.sec3__text {
-    color: rgba(255, 255, 255, .5);
-    margin-top: 2.5rem;
-    transition: .3s;
-}
-
-.sec3_card:hover .sec3_text {
-    color: #fff;
-}
-
-.sec3__card:hover .number h2 {
-    color: #fff;
-    transform: scale(1.2);
-}
-
-.sec3__card:hover {
-    transform: translateY(-1rem);
-}
-
-.sec4 {
-    overflow: hidden;
-    position: relative;
-    min-height: 70vh;
-    width: 100%;
-    background: radial-gradient(#333, #000);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sec4__container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding: 2rem;
-    flex-wrap: wrap;
-}
-
-.sec4__box1 {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    flex-direction: column;
-    flex: .5;
-}
-
-.sec4__content1 {
-    margin-bottom: 1rem;
-}
-
-.sec4__content1 h2 {
-    color: #fff;
-    font-size: 3rem;
-    border-bottom: .2rem solid #ff7b7b;
-    width: fit-content;
-    padding-bottom: .5rem;
-    margin-bottom: .5rem;
-}
-
-
-.sec4__content1 h2 span {
-    color: #ff6060;
-}
-
-.sec4__content1 p {
-    color: #fff;
-}
-
-.sec4__content2Icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-
-.sec4__content2Icon h2 {
-    margin-left: .5rem;
-}
-
-.sec4__content2 {
-    margin: .5rem 0;
-}
-
-.sec4__content3 ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    list-style-type: none;
-    margin-top: 1rem;
-}
-
-.sec4__content3 ul li {
-    margin: 0 1.5rem 0 0;
-}
-
-.sec4__content3 ul li a {
-    color: #fff;
-    font-size: 2rem;
-    border: .2rem solid #fff;
-    padding: .4rem;
-    border-radius: 20%;
-    transition: .3s;
-}
-
-.sec4__content3 ul li a:hover {
-    color: rgba(255, 255, 255, .5);
-}
-
-.sec4__box2 h2 {
-    color: #fff;
-    font-size: 3rem;
-    border-bottom: .2rem solid #ff8282;
-    padding-bottom: .5rem;
-    margin-bottom: .5rem;
-}
-
-.sec4__links ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    list-style-type: none;
-}
-
-.sec4__links ul li {
-    margin: .5rem 0;
-}
-
-.sec4__links ul li a {
-    color: rgba(255, 255, 255, .5);
-    transition: .3s;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-.sec4__links ul li a:hover {
-    color: #fff;
-}
-
-.sec4__box3 h2 {
-    color: #fff;
-    font-size: 3rem;
-    border-bottom: .2rem solid #ff7d7d;
-    padding-bottom: .5rem;
-    margin-bottom: .5rem;
-    width: fit-content;
-}
-
-.sec4__box3 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.sec4__box3 form input {
-    border: none;
-    outline: none;
-    background: #fff;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
-    padding: .5rem 1rem;
-    margin: 1rem 0;
-    width: 100%;
-    border-radius: 3rem;
-}
-
-.sec4__box3 form input::placeholder {
-    color: #333;
-    font-size: 1.1rem;
-}
-
-.sec4__box3 form button {
-    border: none;
-    background: none;
-    outline: none;
-    padding: .5rem 2rem;
-    color: #fff;
-    background: #e66060;
-    cursor: pointer;
-    transition: .3s;
-    border-radius: 3rem;
-
-}
-
-.sec4__box3 form button:hover {
-    color: #ff6060;
-    background: #fff;
-}
-
-/* media query start here  */
-@media(max-width:360px) {
-    .sec1__menuIcon {
-        display: inline-block;
-    }
-
-    .sec1__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 10rem;
-        /* background: blue; */
-        width: 100%;
-        padding: 0 2rem;
-    }
-
-    .navBar__menu {
-        display: none;
-    }
-
-    .sec1_content .sec1_contentDetail h1 {
-        font-weight: 900;
-        font-size: 3.5rem;
-        text-transform: capitalize;
-        transform: translateY(7rem);
-    }
-
-    .sec1__imgBx {
-        position: relative;
-        width: 30rem;
-        /* background: red; */
-        margin-top: 5rem;
-    }
-
-    .sec2__container {
-        position: relative;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        flex-wrap: wrap;
-        padding: 0 2rem;
-        flex-direction: column;
-    }
-
-    .sec2__heading h2 {
-        position: relative;
-        font-size: 2.5rem;
-        color: #333;
-        text-transform: capitalize;
-    }
-
-    .sec2__aboutme1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        flex: .5;
-        margin: 5rem 0;
-    }
-
-    .sec2__aboutme2 {
-        position: relative;
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 0 3rem 0;
-    }
-
-    .sec4__box1 {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: flex-start;
-        flex-direction: column;
-        flex: .5;
-        margin: 2.5rem 0 4rem 0;
-    }
-
-    .sec4__box2 {
-        margin: 2.5rem 0;
-    }
-}
+       
+ <!-- menu section starts -->
+  <section class="menu" id="menu">
+    <h1 class="heading">our <span>menu</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="tommy hili.jpg" alt="">
+            <h3>hilifiger</h3>
+            <div class="price">$215.99/-<span>290.99</span></div>
+            <a href="#" class="btn">add to cart</a>
+            </div>
+
+            <div class="box">
+                <img src="summer clothes.jpg">
+                <h3>SUMMER T-SHIRTS</h3>
+                <div class="price">$165.99/-<span>270.99</span></div>
+                <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+         
+            <div class="box">
+                <img src="ladies1.jpg" height="600">
+                <h3>SUMMER T-SHIRTS</h3>
+                <div class="price">$165.99/-<span>270.99</span></div>
+                <a href="#" class="btn">add to cart</a>
+                </div>
+            </div>
+          
+            </div>
+        </section> 
+
+        <!-- product section start -->
+        <section class="products" id="products">
+            <h1 class="heading">our <span>products</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-shopping-cart"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="pink white kurti.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>fresh STYLE DESIGNER</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="price">$215.50 <span>$460.99</span></div>
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-shopping-cart"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="PURPLE DRESS .jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3> GIVE A NEW LOOK TO YOU</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="price">$124.50 <span>$330.99</span></div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- review section starts -->
+        <section class="review" id="review">
+            <h1 class="heading">our customer's<span>review</span></h1>
+            <div class="box-container">
+                <div class="box">
+                 <img src="" alt="" class="quote">
+                 <p>Indian e-commerce company, headquartered in Bangalore, and incorporated in Singapore as a private limited company. The company initially focused on online book sales before expanding into other product categories such as consumer electronics, fashion, home essentials, groceries, and lifestyle products.[5][6]
+
+                    The service competes primarily with Amazon India and domestic rival Snapdeal.[7][8] As of FY23, Flipkart held a 48% market share in the Indian e-commerce industry.[9] Flipkart has a dominant position in the apparel segment, bolstered by its acquisition of Myntra, and was described as being "neck and neck" with Amazon in the sale of electronics and mobile phones.[10]</p>
+                 <img src="\img5.jpg" class="user" alt="">
+                 <h3>mack ma</h3>
+                 <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                </div>
+                <div class="box">
+                    <img src="" alt="" class="quote">
+                    <p> 
+ 
+                        Add a comment
+                        Creating a product that is different from the competition is important but in order to make sure your product sells you will need customer reviews. Try Salesbacker for free so that you can automate the process of asking your customers for product reviews.</p>
+                    <img src="\img5.jpg" class="user" alt="">
+                    <h3>mack ma</h3>
+                    <div class="stars">
+                       <i class="fas fa-star"></i>
+                       <i class="fas fa-star"></i>
+                       <i class="fas fa-star"></i>
+                       <i class="fas fa-star-half-alt"></i>
+                   </div>
+                   </div>
+            </div>
+        </section>
+        <!-- contact section starts -->
+        <section class="contact" id="contact">
+            <h1 class="heading"><span>contact</span>us</h1>
+                <div class="row">
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14734.41659961017!2d88.42302264025756!3d22.593903982588817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275997911a1fd%3A0x6d082e4e563a3c61!2sMilan%20Bazar%2C%20Samarpally%2C%20Krishnapur%2C%20Kestopur%2C%20Kolkata%2C%20West%20Bengal%20700102!5e0!3m2!1sen!2sin!4v1715156840563!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <form action="">
+                        <h3>Get in touch</h3>
+                        <div class="inputBox">
+                           <span class="fas fa-user"></span>
+                           <input type="text" placeholder="name">
+                           </div>
+                           <div class="inputBox">
+                            <span class="fas fa-envelope"></span>
+                            <input type="email" placeholder="email">
+                            </div>
+                            <div class="inputBox">
+                                <span class="fas fa-phone"></span>
+                                <input type="number" placeholder="number">
+                                </div>
+                                <input type="submit" value="contact now" class="btn">
+                    </form>
+            </div>
+        </section>
+
+            <!-- blogs section starts -->
+            <section class="blogs" id="blogs">
+                <h1 class="heading">our <span>blogs</span></h1>
+                <div class="box-container">
+                    <div class="box">
+                    <div class="image">
+                        <img src="jodran bule.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="#" class="title">new nicky bule</a>
+                        <span>by admin / 21st may, 2021</span>
+                        <p>Buy Blue Sports Shoes for Men by NIKE Online in India at Rs. 3695. Shop for more NIKE Sports Shoess at Ajio.com and avail great discounts.
+                            ₹3,695.00 · ‎Out of stock</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="yellow shoes.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="#" class="title">yellow shoes</a>
+                        <span>by admin / 21st may, 2021</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laborum dolorum alias?</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="black half cut.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="#" class="title">cool style</a>
+                        <span>by admin / 21st may, 2021</span>
+                        <p>The GST (Goods and Services Tax) launch in July 2017 has earned a significant mention in the Indian Economics Books, necessitating every business in the Indian market to realign its systems and processes for GST Compliance.as?</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- footer section starts -->
+            <section class="footer" id="footer">
+                <div class="share">
+                    <a href="https://www.facebook.com/uagarwal2" class="fab fa-facebook"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="https://www.instagram.com/ud_sir_dhanbad_se_/" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+
+                <div class="links">
+                    <a href="#">home</a>
+                    <a href="#">about</a>
+                    <a href="#">menu</a>
+                    <a href="#">product</a>
+                    <a href="#">review</a>
+                    <a href="#">contact</a>
+                    <a href="#">blogs</a>
+                </div>
+                <div class="credit">created by <span> Mr. UDAY KUMAR </span> @all rights reserved</div>
+
+            </section>
+<!-- coustome js file -->
+<script src="/script78.js"></script>
+</body>
+</html>
